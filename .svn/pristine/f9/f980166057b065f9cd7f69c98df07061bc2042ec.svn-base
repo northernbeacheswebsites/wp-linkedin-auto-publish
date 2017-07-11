@@ -1,0 +1,57 @@
+<?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly 
+?>
+
+<form id='linkedin_autopublish_settings_form' action='options.php' method='post'>
+    <div class="wrap">
+        <div id="poststuff">
+            <!--main heading-->
+            <h1><i style="color: #0077b5;" class="fa fa-linkedin-square" aria-hidden="true"></i> <?php echo __('WP LinkedIn Auto Publish','wp_linkedin_autopublish') ?></h1>
+            <!--notice message-->
+            <div data-dismissible="disable-done-notice-forever" class="notice notice-warning is-dismissible">
+            <p><?php _e( '<h3>A Message from the Developer</h3><p>Hi there! Thanks for using my plugin. This plugin is brand new so please be kind and patient. I wrote this plugin because I found there was no <strong>free</strong> way to share posts on LinkedIn company pages so I thought I would give this a shot. So if you like it please <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VGVE97KF74FVN" target="_blank">donate</a> as your donation will enable me to continue developing and improving the plugin and you can also rate the plugin <a href="https://wordpress.org/support/plugin/wp-linkedin-auto-publish/reviews/?rate=5#new-post" target="_blank"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></a>\'s. If the plugin doesn\'t work you should take a few big breaths and then <a href="mailto:info@northernbeacheswebsites.com.au">email me</a> so I can try and fix it.</p>', 'wp_linkedin_autopublish' ); ?></p>
+            </div>
+
+
+            <!--start tabs-->
+            <div id="tabs" class="nav-tab-wrapper"> 
+                <ul class="tab-titles">
+                    <li><a class="nav-tab" href="#authorisationPage"><i class="fa fa-lock" aria-hidden="true"></i> Authorisation</a></li>
+                    <li><a class="nav-tab" href="#profileCompanyPage"><i class="fa fa-briefcase" aria-hidden="true"></i> Profile or Company</a></li>
+                    <li><a class="nav-tab" href="#sharingOptionsPage"><i class="fa fa-share-alt" aria-hidden="true"></i> Sharing Options</a></li>
+                </ul>
+
+                <!--add settings pages-->
+                <?php 
+
+                wp_linkedin_autopublish_tab_content('authorisationPage'); 
+
+                wp_linkedin_autopublish_tab_content('profileCompanyPage');
+
+                wp_linkedin_autopublish_tab_content('sharingOptionsPage');
+
+                ?>
+
+
+            </div> <!--end tabs div-->     
+
+            <!--ad-->
+            <a id="linkedin-ad" target="_blank" href="https://northernbeacheswebsites.com.au/contact/">
+                <div style="width: 100%; background-color: white; margin-bottom: 20px;">
+                    <div style="padding: 0px 25px; text-align: center;">
+                        <img style="vertical-align: middle; max-width: 100%; height: auto;" src="<?php echo plugins_url( '/images/linkedin-ad.jpg', __FILE__ ); ?>">
+                    </div>
+                </div>
+            </a>
+            <!--footer text and button-->
+            <p> <?php esc_attr_e( 'Thank you for using WP LinkedIn Auto Publish. Your donation contributes to the development of this plugin. Any donation amount is much appreciated.'); ?></p>
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="VGVE97KF74FVN">
+            <input type="image" src="https://northernbeacheswebsites.com.au/root-nbw/wp-content/uploads/2016/11/donate-button.png" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_AU/i/scr/pixel.gif" width="1" height="1">
+
+
+        </div>
+    </div>
+</form>

@@ -1,0 +1,112 @@
+=== WP LinkedIn Auto Publish ===
+Contributors: northernbeacheswebsites
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VGVE97KF74FVN
+Tags: linkedin, linkedin profile, linkedin company, linkedin companies, auto publish, autopublish
+Requires at least: 3.0.1
+Tested up to: 4.7
+Stable tag: 2.2
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+WP LinkedIn Auto Publish automatically publishes your latest blog post to your LinkedIn profile or company page.
+
+== Description ==
+
+WP LinkedIn Auto Publish lets you publish posts automatically from WordPress to your personal LinkedIn profile or to a LinkedIn company page that you are an administrator of. 
+
+The plugin is simple, lightweight and free. It does have a couple of options which includes choosing who you want to share your LinkedIn posts with and whether you want to enable simple text-based sharing or more advanced sharing where you can tell LinkedIn to use your posts feature image. You can also setup a default share message format for all your posts which you can over-ride on the post settings. You can also filter items to be published based on categories selected on the plugin settings page. 
+
+Every post will automatically be published to LinkedIn, however on each post there is a checkbox which enables you to not share a particular post. 
+
+
+== Installation ==
+
+There are a couple of methods for installing and setting up this plugin.
+
+= Upload Manually =
+
+1. Download and unzip the plugin
+2. Upload the 'wp-linkedin-autopublish' folder into the '/wp-content/plugins/' directory
+3. Go to the Plugins admin page and activate the plugin
+
+= Install via the Admin Area =
+
+1. In the admin area go to Plugins > Add New and search for "WP LinkedIn Auto Publish"
+2. Click install and then click activate
+
+
+== Frequently Asked Questions ==
+
+= How do I create a LinkedIn application =
+
+1. Go to: https://www.linkedin.com/developer/apps (make sure you are logged into LinkedIn)
+2. Click the 'Create Application' button
+3. Fill out the form
+4. Then on the 'Authentication' tab give your app all permissions
+5. Under the 'oAuth 2.0' redirect option add the URL: http://yourwebsite.com/wp-admin/options-general.php?page=wp-linkedin-autopublish (obviously replacing yourwebsite.com with your WordPress domain - your specific redirect URL can be found on the plugin settings page as well)
+6. In the 'Settings' tab make sure your apps 'Application Status' is set to 'Live'
+
+= How do I setup the plugin =
+
+1. In the WordPress admin area go to Settings > WP LinkedIn Auto Publish
+2. In the "Authorisation" tab enter in your LinkedIn Client ID and Secret and save the changes
+3. Click the "Get Authorisation & Access Token" button and authenticate with LinkedIn
+4. You will then be redirected to the settings page and the Authorisation Code and Access Token fields should now be completed so you can press the "Save All Settings" button
+
+= How do I choose whether to share to my profile or company page =
+1. In the plugin settings go to the "Profile or Company" tab
+2. Fill out the fields, this should be pretty self-explanatory
+3. Press the "Save All Settings" button to save your changes
+
+= How do I customise the sharing options =
+1. In the plugin settings go to the "Sharing Options" tab
+2. Fill out the fields, this should be pretty self-explanatory
+3. Press the "Save All Settings" button to save your changes
+
+= How do I share my post to LinkedIn  =
+1. Posts will automatically publish to LinkedIn but on the posts page there will be a new settings panel where you can choose not to share a particular post
+
+== Screenshots ==
+
+1. Once you have installed the plugin, navigate to Settings > WP LinkedIn Auto Publish in the admin area and you will be welcomed with the main settings page where you will need to enter in some authorisation details.
+2. You can then move across to the next tab and choose whether you want to share to your personal profile or company page.
+3. In the final tab you can choose some additional sharing options.
+4. On every post page there will now be a new LinkedIn settings box where you can over-ride the default share message or choose to not to share the particular post with LinkedIn.
+
+
+
+== Changelog ==
+
+= 2.2 =
+* Updated links and messaging
+
+= 2.1 =
+* Updated file names
+
+= 2.0 =
+* Reconfigured plugin setting arrangement to follow WordPress best practice
+* Updated settings interface
+
+= 1.1 =
+* You can now choose particular categories not to share on LinkedIn
+
+= 1.0 =
+* Initial launch of the plugin
+
+== Upgrade Notice ==
+
+= 2.2 =
+* Updated links and messaging
+
+= 2.1 =
+* Updated file names
+
+= 2.0 =
+* Reconfigured plugin setting arrangement to follow WordPress best practice
+* Updated settings interface
+
+= 1.1 =
+* You can now choose particular categories not to share on LinkedIn
+
+= 1.0 =
+* This is the first version of the plugin.
