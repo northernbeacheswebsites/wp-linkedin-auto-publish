@@ -4,7 +4,7 @@
 *		Plugin Name: WP LinkedIn Auto Publish
 *		Plugin URI: https://www.northernbeacheswebsites.com.au
 *		Description: Publish your latest posts to LinkedIn profiles or companies automatically. 
-*		Version: 5.14
+*		Version: 5.16
 *		Author: Martin Gibson
 *		Author URI:  https://www.northernbeacheswebsites.com.au
 *		Text Domain: wp-linkedin-auto-publish   
@@ -75,6 +75,19 @@ function wp_linkedin_autopublish_settings_link( $links ) {
 }
 $plugin = plugin_basename( __FILE__ );
 add_filter( "plugin_action_links_$plugin", 'wp_linkedin_autopublish_settings_link' );
+/**
+* 
+*
+*
+* Gets version number of plugin
+*/
+function wp_linkedin_autopublish_get_version() {
+	if ( ! function_exists( 'get_plugins' ) )
+        require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+	$plugin_folder = get_plugins( '/' . plugin_basename( dirname( __FILE__ ) ) );
+	$plugin_file = basename( ( __FILE__ ) );
+	return $plugin_folder[$plugin_file]['Version'];
+}
 /**
 * 
 *
@@ -223,7 +236,33 @@ function wp_linkedin_autopublish_tab_content ($tabName) {
                     
                     <h3><i class="fa fa-info-circle" aria-hidden="true"></i> I am still having issues with the plugin, what can I Do?</h3>
                     <div>
-                        Please visit the <a target="_blank" href="https://wordpress.org/support/plugin/wp-linkedin-auto-publish">forum</a> and I should answer your question or resolve your issue within 24 hours. Before writing on the forum make sure you have the latest version of this plugin installed and it would be a good idea to also make sure you have the latest version of WordPress. Please be specific and screenshots often say a thousand words so please try and do this. I will try and resolve your issue from my end however sometimes I can't replicate every issue and in these circumstances I may ask you to provide access to your WordPress install so I can properly diagnose things.
+                        Please visit the <a target="_blank" href="https://wordpress.org/support/plugin/wp-linkedin-auto-publish">forum</a> and I should answer your question or resolve your issue within 24 hours. Before writing on the forum make sure you have the latest version of this plugin installed and it would be a good idea to also make sure you have the latest version of WordPress. Please be specific and screenshots often say a thousand words so please try and do this. I will try and resolve your issue from my end however sometimes I can't replicate every issue and in these circumstances I may ask you to provide access to your WordPress install so I can properly diagnose things. 
+                        
+                        I may also ask for the following diagnostic information to help me resolve the issue:
+                        
+                        <p><code><?php echo 'PHP Version: <strong>'.phpversion().'</strong>'; ?></br>
+                        <?php echo 'Wordpress Version: <strong>'.get_bloginfo('version').'</strong>'; ?></br>
+                        Plugin Version: <strong><?php echo wp_linkedin_autopublish_get_version(); ?></strong></br>
+                        Current Theme: <strong><?php 
+                        $user_theme = wp_get_theme();    
+                        echo esc_html( $user_theme->get( 'Name' ) );
+                        ?></strong></br>
+
+                        Active Plugins:</br> 
+                        <?php 
+                        $active_plugins=get_option('active_plugins');
+                        $plugins=get_plugins();
+                        $activated_plugins=array();
+                        foreach ($active_plugins as $plugin){           
+                        array_push($activated_plugins, $plugins[$plugin]);     
+                        } 
+
+                        foreach ($activated_plugins as $key){  
+                        echo '<strong>'.$key['Name'].'</strong></br>';
+                        }
+
+                        ?></code></p>
+                        
                     </div>
                     
                 </div>
